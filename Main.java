@@ -17,4 +17,12 @@ public class Main {
 
         System.out.println("Totale: $" + spesa.calcolaTotale());
     }
+
+    public void menu() {
+        System.out.println("1. Aggiungi prodotto");
+        System.out.println("2. Rimuovi prodotto");
+        System.out.println("3. Stampa lista prodotti");
+        System.out.println("4. Calcola totale");
+        System.out.println("5. Esci");
+    }
 }
