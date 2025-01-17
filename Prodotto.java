@@ -1,5 +1,5 @@
 public class Prodotto {
-    private String coodiceABarre; // Fixed typo: 'coodice' to 'codice'
+    private String codiceABarre;
     private String descrizione;
     private int quantita;
     private double costo;
@@ -13,12 +13,12 @@ public class Prodotto {
     }
 
     // Getter for codiceABarre
-    public String getCodiceABarre() { // Fixed typo: 'coodice' to 'codice'
+    public String getCodiceABarre() {
         return codiceABarre;
     }
 
     // Setter for codiceABarre
-    public boolean setCodiceABarre(String codiceABarre) { // Fixed typo: 'coodice' to 'codice'
+    public boolean setCodiceABarre(String codiceABarre) {
         if (codiceABarre.length() >= 5) {
             this.codiceABarre = codiceABarre;
             return true;
@@ -33,31 +33,27 @@ public class Prodotto {
 
     // Setter for descrizione
     public void setDescrizione(String descrizione) {
-        if (descrizione.length() >= 12) { // Ensure descrizione is at least 12 characters long
+        if (descrizione.length() >= 12) {
             this.descrizione = descrizione;
         }
     }
 
-    // Getter for quantita
     public int getQuantita() {
         return quantita;
     }
 
-    // Setter for quantita
     public void setQuantita(int quantita) {
-        if (quantita > 0) { // Ensure quantita is strictly positive
+        if (quantita > 0) {
             this.quantita = quantita;
         }
     }
 
-    // Getter for costo
     public double getCosto() {
         return costo;
     }
 
-    // Setter for costo
-    public void setCosto(double costo) { // Fixed method name: setcosto to setCosto
-        if (costo > 0) { // Ensure costo is strictly positive
+    public void setCosto(double costo) {
+        if (costo > 0) {
             this.costo = costo;
         }
     }
