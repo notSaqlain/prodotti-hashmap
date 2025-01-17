@@ -41,7 +41,7 @@ public class Main {
                     System.out.print("Costo: ");
                     while (!scanner.hasNextDouble()) {
                         System.out.print("Input non valido. Costo: ");
-                        scanner.next(); // discard invalid input
+                        scanner.next();
                     }
                     double costo = scanner.nextDouble();
 
