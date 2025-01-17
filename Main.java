@@ -1,24 +1,42 @@
+
+
 public class Main {
     public static void main(String[] args) {
-        Prodotto prodotto1 = new Prodotto("12345", "Descrizione del prodotto 1", 10, 5.99);
-        Prodotto prodotto2 = new Prodotto("67890", "Descrizione del prodotto 2", 5, 3.49);
-
         Spesa spesa = new Spesa();
-
-        spesa.aggiungiProdotto(prodotto1);
-        spesa.aggiungiProdotto(prodotto2);
-
-        spesa.stampaListaProdotti();
-
-        spesa.rimuoviProdotto("12345");
-
-        System.out.println("Dopo aver rimosso il prodotto:");
-        spesa.stampaListaProdotti();
-
-        System.out.println("Totale: $" + spesa.calcolaTotale());
+        int scelta;
+        do {
+            menu();
+            scelta = InputOutputUtility.leggiNumero("Scelta: ");
+            switch (scelta) {
+                case 1:
+                    String codiceABarre = InputOutputUtility.leggiStringaNonVuota("Codice a barre: ");
+                    String descrizione = InputOutputUtility.leggiStringaNonVuota("Descrizione: ");
+                    int quantita = InputOutputUtility.leggiNumero("Quantita: ");
+                    double costo = InputOutputUtility.leggiNumero("Costo: ");
+                    Prodotto prodotto = new Prodotto(codiceABarre, descrizione, quantita, costo);
+                    spesa.aggiungiProdotto(prodotto);
+                    break;
+                case 2:
+                    String codice = InputOutputUtility.leggiStringaNonVuota("Codice a barre: ");
+                    spesa.rimuoviProdotto(codice);
+                    break;
+                case 3:
+                    spesa.stampaListaProdotti();
+                    break;
+                case 4:
+                    System.out.println("Totale: $" + spesa.calcolaTotale());
+                    break;
+                case 5:
+                    System.out.println("Arrivederci!");
+                    break;
+                default:
+                    System.out.println("Scelta non valida");
+            }
+        } while (scelta != 5);
+        
     }
 
-    public void menu() {
+    public static void menu() {
         System.out.println("1. Aggiungi prodotto");
         System.out.println("2. Rimuovi prodotto");
         System.out.println("3. Stampa lista prodotti");
