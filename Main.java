@@ -14,5 +14,7 @@ public class Main {
 
         System.out.println("Dopo aver rimosso il prodotto:");
         spesa.stampaListaProdotti();
+
+        System.out.println("Totale: " + spesa.calcolaTotale());
     }
 }
